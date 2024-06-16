@@ -1,9 +1,10 @@
 import { useState } from "react";
+import PatientsBar from "./components/PatientsBar";
 
 function Dashboard() {
   return (
     <div className="grid grid-cols-[367px,1fr,300px]">
-      {/* <PatientsBar /> */}
+      <PatientsBar />
       <div className="flex flex-col gap-4 xl:grid-rows-none">
         {/* <DiagnosisHistory />
         <DiagnosticList /> */}
