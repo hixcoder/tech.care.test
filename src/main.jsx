@@ -9,7 +9,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <GlobalState>
       <main className="flex items-center justify-center text-lg  ">
-        <div className="max-w-[1850px]  flex flex-col gap-4 w-full font-manrope p-5">
+        <div className="max-w-[1850px]  flex flex-col gap-4 w-full font-manrope p-5 h-screen">
           <Navbar />
           <Dashboard />
         </div>

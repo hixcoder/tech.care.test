@@ -46,7 +46,7 @@ const Navbar = () => {
               <div
                 onClick={() => setIsClicked(index)}
                 key={index}
-                className={`flex gap-2 items-center justify-center font-bold py-3 px-5 transition-all 
+                className={`flex gap-2 items-center justify-center font-bold py-2 px-5 transition-all 
                   duration-300 ease-in-out cursor-pointer rounded-[5rem]
                   ${isClicked === index && " bg-[#01F0D0] text-white "}`}
               >
