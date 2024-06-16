@@ -11,7 +11,7 @@ const PatientsBar = () => {
           <h2 className="text-[24px] font-bold text-[#072635]">Patients</h2>
           <img src="/assets/search_FILL0_wght300_GRAD0_opsz24.svg" alt="" />
         </div>
-        <div className="relative flex flex-col gap-0 h-full max-h-[75vh] overflow-y-auto items-start justify-between pr-4">
+        <div className="relative flex flex-col gap-0 h-[120vh] overflow-y-auto items-start justify-between pr-4">
           {users.map((user, index) => {
             return (
               <div

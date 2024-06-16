@@ -37,3 +37,8 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+canvas {
+  height: 100px;
+  width: 100px;
+}

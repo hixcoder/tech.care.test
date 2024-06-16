@@ -50,11 +50,7 @@ const Navbar = () => {
                   duration-300 ease-in-out cursor-pointer rounded-[5rem]
                   ${isClicked === index && " bg-[#01F0D0] text-white "}`}
               >
-                <img
-                  src={element.img}
-                  alt={element.name}
-                  className="w-[15px] h-[17px]"
-                />
+                <img src={element.img} alt={element.name} className="w-5 h-4" />
                 <h2 className="text-[14px] text-[#072635]">{element.name}</h2>
               </div>
             );
