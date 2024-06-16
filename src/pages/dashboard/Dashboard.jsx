@@ -2,6 +2,7 @@ import { useState } from "react";
 import PatientsBar from "./components/PatientsBar";
 import DiagnosticsHistory from "./components/DiagnosticsHistory";
 import DiagnosticsList from "./components/DiagnosticsList";
+import PatientInfo from "./components/PatientInfo";
 
 function Dashboard() {
   return (
@@ -14,7 +15,8 @@ function Dashboard() {
         <DiagnosticsList />
       </div>
 
-      <div className="w-1/5 h-[85vh] px-2 bg-red-500 flex flex-col gap-4">
+      <div className="w-1/5 h-[85vh]  flex flex-col gap-4">
+        <PatientInfo />
         {/* <PatientInfo />
         <LabResults /> */}
       </div>
