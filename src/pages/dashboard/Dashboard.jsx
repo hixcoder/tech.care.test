@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PatientsBar from "./components/PatientsBar";
-import DiagnosisHistory from "./components/DiagnosisHistory";
+import DiagnosticsHistory from "./components/DiagnosticsHistory";
+import DiagnosticsList from "./components/DiagnosticsList";
 
 function Dashboard() {
   return (
@@ -9,8 +10,8 @@ function Dashboard() {
         <PatientsBar />
       </div>
       <div className="w-3/5 h-full min-h-96 px-4 flex flex-col gap-4 ">
-        <DiagnosisHistory />
-        {/* <DiagnosticList /> */}
+        <DiagnosticsHistory />
+        <DiagnosticsList />
       </div>
 
       <div className="w-1/5 h-[85vh] px-2 bg-red-500 flex flex-col gap-4">

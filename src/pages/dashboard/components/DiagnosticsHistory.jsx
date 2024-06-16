@@ -20,7 +20,7 @@ ChartJS.register(
   Legend
 );
 
-export default function DiagnosisHistory() {
+export default function DiagnosticsHistory() {
   const items = [
     {
       imageUri: "/assets/respiratory rate.svg",
