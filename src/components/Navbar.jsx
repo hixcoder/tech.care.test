@@ -70,7 +70,7 @@ const Navbar = () => {
           </div>
           <div className="text-[14px]">
             <h2 className="text-[#072635] font-bold">Dr Jose Simons</h2>
-            <h2 className="text-[#707070] ">General Practioner</h2>
+            <h2 className="text-[#707070] mt-[-6px]">General Practioner</h2>
           </div>
           <div className="h-20% w-[1px] bg-[#F6F7F8] rounded-md"></div>
           <div className="flex items-center justify-center gap-1">

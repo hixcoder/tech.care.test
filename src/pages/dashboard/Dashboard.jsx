@@ -1,16 +1,19 @@
 import { useState } from "react";
 import PatientsBar from "./components/PatientsBar";
+import DiagnosisHistory from "./components/DiagnosisHistory";
 
 function Dashboard() {
   return (
-    <div className="grid grid-cols-[367px,1fr,300px] h-full">
-      <PatientsBar />
-      <div className="flex flex-col gap-4 xl:grid-rows-none">
-        {/* <DiagnosisHistory />
-        <DiagnosticList /> */}
+    <div className="flex flex-row  h-[85vh]">
+      <div className="w-1/5">
+        <PatientsBar />
+      </div>
+      <div className="w-3/5 h-full min-h-96 px-4 flex flex-col gap-4 ">
+        <DiagnosisHistory />
+        {/* <DiagnosticList /> */}
       </div>
 
-      <div className="grid grid-rows-[90%,1fr] xl:grid-rows-none gap-4">
+      <div className="w-1/5 h-[85vh] px-2 bg-red-500 flex flex-col gap-4">
         {/* <PatientInfo />
         <LabResults /> */}
       </div>
