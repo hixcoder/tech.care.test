@@ -1,14 +1,18 @@
 import { useState } from "react";
-import Navbar from "../../components/Navbar";
 
 function Dashboard() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="flex items-center justify-center text-lg  ">
-      <main className="max-w-[1850px]  flex flex-col gap-4 w-full font-manrope p-5">
-        <Navbar />
-      </main>
+    <div className="grid grid-cols-[367px,1fr,300px]">
+      {/* <PatientsBar /> */}
+      <div className="flex flex-col gap-4 xl:grid-rows-none">
+        {/* <DiagnosisHistory />
+        <DiagnosticList /> */}
+      </div>
+
+      <div className="grid grid-rows-[90%,1fr] xl:grid-rows-none gap-4">
+        {/* <PatientInfo />
+        <LabResults /> */}
+      </div>
     </div>
   );
 }
