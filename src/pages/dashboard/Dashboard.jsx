@@ -3,6 +3,7 @@ import PatientsBar from "./components/PatientsBar";
 import DiagnosticsHistory from "./components/DiagnosticsHistory";
 import DiagnosticsList from "./components/DiagnosticsList";
 import PatientInfo from "./components/PatientInfo";
+import LabResults from "./components/LabResults";
 
 function Dashboard() {
   return (
@@ -17,8 +18,7 @@ function Dashboard() {
 
       <div className="w-1/5 h-[85vh]  flex flex-col gap-4">
         <PatientInfo />
-        {/* <PatientInfo />
-        <LabResults /> */}
+        <LabResults />
       </div>
     </div>
   );
