@@ -5,7 +5,16 @@ export const Globalcontext = createContext();
 
 export const GlobalState = ({ children }) => {
   const [users, setUsers] = useState([]);
-
+  const [selectedUser, setSelectedUser] = useState({
+    name: "",
+    age: "",
+    gender: "",
+    profile_picture: "",
+    date_of_birth: "",
+    emergency_contact: "",
+    insurance_type: "",
+    phone_number: "",
+  });
   // Fetching data from the API
   const getData = async () => {
     try {
@@ -18,6 +27,7 @@ export const GlobalState = ({ children }) => {
         },
       });
       setUsers(response.data);
+      setSelectedUser(response.data[3]);
     } catch (error) {
       throw new Error("Something went wrong!!!");
     }
@@ -32,6 +42,8 @@ export const GlobalState = ({ children }) => {
       <Globalcontext.Provider
         value={{
           users,
+          selectedUser,
+          setSelectedUser,
         }}
       >
         {children}

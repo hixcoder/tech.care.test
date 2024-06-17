@@ -21,7 +21,7 @@ const LabResults = () => {
             lab results
           </h2>
         </div>
-        <div className="py-[2rem] p-4 flex flex-col gap-3 overflow-y-auto h-[48vh]">
+        <div className="py-[2rem] p-4 flex flex-col gap-3 overflow-y-auto h-[35vh]">
           {labResults.map((list, index) => {
             return (
               <>

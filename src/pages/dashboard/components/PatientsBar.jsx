@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Globalcontext } from "../../../context/Context";
 
 const PatientsBar = () => {
-  const { users } = useContext(Globalcontext);
+  const { users, selectedUser, setSelectedUser } = useContext(Globalcontext);
   console.log("users", users);
   return (
     <main className="w-full  rounded-[16px] bg-[#FFFFFF] pb-[1rem] ">
@@ -15,11 +15,12 @@ const PatientsBar = () => {
           {users.map((user, index) => {
             return (
               <div
+                onClick={() => setSelectedUser(user)}
                 key={"user" + index}
                 className={`cursor-pointer w-full flex items-center justify-between    py-4 px-4 
                 transition duration-100 ease-in-out
                 ${
-                  user.name === "Jessica Taylor"
+                  user.name === selectedUser.name
                     ? "bg-[#D8FCF7]  hover:bg-[#D8FCF7]"
                     : "hover:bg-[#d8fcf78e]"
                 }`}
@@ -31,7 +32,7 @@ const PatientsBar = () => {
                     className="w-[44px] h-[44px] rounded-[50%]"
                   />
                   <div className="flex flex-col  ">
-                    <h2 className="text-[#072635]">{user.name}</h2>
+                    <h2 className="text-[#072635] font-bold">{user.name}</h2>
                     <div className="flex text-[#707070]">
                       <h3>{user.gender},</h3>
                       <h3>{user.age}</h3>

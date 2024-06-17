@@ -1,34 +1,20 @@
 import React, { useContext } from "react";
+import { Globalcontext } from "../../../context/Context";
 
 const PatientInfo = () => {
-  //   const {
-  //     name,
-  //     gender,
-  //     profile_picture,
-  //     date_of_birth,
-  //     emergency_contact,
-  //     insurance_type,
-  //     phone_number,
-  //   } = jessicaData;
-  const name = "Jessica Taylor";
-  const gender = "female";
-  const profile_picture = "https://fedskillstest.ct.digital/1.png";
-  const date_of_birth = "12th May 1990";
-  const emergency_contact = "+234 123 456 7890";
-  const insurance_type = "Axa Mansard";
-  const phone_number = "+234 123 456 7890";
+  const { users, selectedUser, setSelectedUser } = useContext(Globalcontext);
 
   return (
     <main className="bg-[#FFFFFF] w-full py-5 px-4 rounded-[16px] flex flex-col  justify-evenly gap-6">
       <div className="flex flex-col items-center gap-3 justify-center">
         <div>
           <img
-            src={profile_picture}
-            alt={name}
-            className="w-[140px] h-[140px] rounded-md"
+            src={selectedUser.profile_picture}
+            alt={selectedUser.name}
+            className="w-[200px] h-[200px] rounded-md"
           />
         </div>
-        <h2 className="text-[24px] font-bold">{name}</h2>
+        <h2 className="text-[24px] font-bold my-4">{selectedUser.name}</h2>
       </div>
       <div>
         <div className="flex flex-col items-start justify-between  gap-2 xl:justify-evenly xl:gap-10">
@@ -37,7 +23,7 @@ const PatientInfo = () => {
             <div className="flex flex-col">
               <h2 className="text-[14px] text-[#072635]">Date of birth</h2>
               <h2 className="text-[14px] text-[#072635] font-bold capitalize leading-[24px]">
-                {date_of_birth}
+                {selectedUser.date_of_birth}
               </h2>
             </div>
           </div>
@@ -46,7 +32,7 @@ const PatientInfo = () => {
             <div>
               <h2 className="text-[14px] text-[#072635]">Gender</h2>
               <h2 className="text-[14px] text-[#072635] font-bold capitalize leading-[24px]">
-                {gender}
+                {selectedUser.gender}
               </h2>
             </div>
           </div>
@@ -56,7 +42,7 @@ const PatientInfo = () => {
               <h2 className="text-[14px] text-[#072635]">Contact Info</h2>
               <h2 className="text-[14px] text-[#072635] font-bold capitalize leading-[24px]">
                 {" "}
-                {phone_number}
+                {selectedUser.phone_number}
               </h2>
             </div>
           </div>
@@ -65,7 +51,7 @@ const PatientInfo = () => {
             <div>
               <h2 className="text-[14px] text-[#072635]">Emmergency Phone</h2>
               <h2 className="text-[14px] text-[#072635] font-bold capitalize leading-[24px]">
-                {emergency_contact}
+                {selectedUser.emergency_contact}
               </h2>
             </div>
           </div>
@@ -74,7 +60,7 @@ const PatientInfo = () => {
             <div>
               <h2 className="text-[14px] text-[#072635]">Insurance Provider</h2>
               <h2 className="text-[14px] text-[#072635] font-bold capitalize leading-[24px]">
-                {insurance_type}
+                {selectedUser.insurance_type}
               </h2>
             </div>
           </div>
