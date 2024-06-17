@@ -3,7 +3,7 @@ import { Globalcontext } from "../../../context/Context";
 
 const PatientsBar = () => {
   const { users, selectedUser, setSelectedUser } = useContext(Globalcontext);
-  console.log("users", users);
+  // console.log("users", users);
   return (
     <main className="w-full  rounded-[16px] bg-[#FFFFFF] pb-[1rem] ">
       <div className=" flex flex-col gap-4">

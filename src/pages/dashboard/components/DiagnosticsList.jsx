@@ -1,88 +1,22 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { Globalcontext } from "../../../context/Context";
 
 const DiagnosticsList = () => {
-  const diagnosticsList = [
-    {
-      name: "Blood Pressure",
-      description: "High Blood Pressure",
-      status: "Normal",
-    },
-    {
-      name: "Blood Sugar",
-      description: "High Blood Sugar",
-      status: "Normal",
-    },
-    {
-      name: "Heart Rate",
-      description: "High Heart Rate",
-      status: "Normal",
-    },
-    {
-      name: "Temperature",
-      description: "High Temperature",
-      status: "Normal",
-    },
-    {
-      name: "Blood Pressure",
-      description: "High Blood Pressure",
-      status: "Normal",
-    },
-    {
-      name: "Blood Sugar",
-      description: "High Blood Sugar",
-      status: "Normal",
-    },
-    {
-      name: "Heart Rate",
-      description: "High Heart Rate",
-      status: "Normal",
-    },
-    {
-      name: "Temperature",
-      description: "High Temperature",
-      status: "Normal",
-    },
-    {
-      name: "Blood Pressure",
-      description: "High Blood Pressure",
-      status: "Normal",
-    },
-    {
-      name: "Blood Sugar",
-      description: "High Blood Sugar",
-      status: "Normal",
-    },
-    {
-      name: "Heart Rate",
-      description: "High Heart Rate",
-      status: "Normal",
-    },
-    {
-      name: "Temperature",
-      description: "High Temperature",
-      status: "Normal",
-    },
-    {
-      name: "Blood Pressure",
-      description: "High Blood Pressure",
-      status: "Normal",
-    },
-    {
-      name: "Blood Sugar",
-      description: "High Blood Sugar",
-      status: "Normal",
-    },
-    {
-      name: "Heart Rate",
-      description: "High Heart Rate",
-      status: "Normal",
-    },
-    {
-      name: "Temperature",
-      description: "High Temperature",
-      status: "Normal",
-    },
-  ];
+  const [diagnosticsList, setDiagnosticsList] = useState([]);
+  const { users, selectedUser, setSelectedUser } = useContext(Globalcontext);
+
+  useEffect(() => {
+    function getData() {
+      if (selectedUser) {
+        setDiagnosticsList(
+          Array.isArray(selectedUser.diagnostic_list)
+            ? selectedUser.diagnostic_list
+            : []
+        );
+      }
+    }
+    getData();
+  }, [selectedUser]);
   return (
     <main className="cursor-pointer w-full h-full ">
       <div className="flex flex-col  bg-[#FFFF] rounded-[16px] w-full  p-5">
@@ -102,14 +36,14 @@ const DiagnosticsList = () => {
             </tr>
           </thead>
 
-          <br />
+          {/* <br /> */}
         </table>
         <div className="h-56 w-full overflow-y-auto">
           <table className="flex-col gap-16 text-left w-full">
             <tbody className="h-2">
-              {diagnosticsList.map((data, index) => {
-                return (
-                  <>
+              {diagnosticsList.length > 0 ? (
+                diagnosticsList?.map((data, index) => {
+                  return (
                     <tr
                       key={index}
                       className="ml-[3rem] text-[14px] leading-[24px] border-b-[1px] border-[#F6F7F8]"
@@ -124,9 +58,16 @@ const DiagnosticsList = () => {
                         {data.status}
                       </td>
                     </tr>
-                  </>
-                );
-              })}
+                  );
+                })
+              ) : (
+                // <p>No diagnostics available</p>
+                <tr className="ml-[3rem] text-[14px] leading-[24px] border-b-[1px] border-[#F6F7F8]">
+                  <td className="p-[.85rem] w-1/4 text-left">
+                    No diagnostics available
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>
