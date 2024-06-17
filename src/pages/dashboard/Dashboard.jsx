@@ -7,8 +7,8 @@ import LabResults from "./components/LabResults";
 
 function Dashboard() {
   return (
-    <div className="flex flex-row  h-[85vh]">
-      <div className="w-1/5">
+    <div className="flex flex-row h-fit items-stretch pb-16">
+      <div className="w-1/5 h-full rounded-[16px] bg-[#FFFFFF] pb-[1rem] ">
         <PatientsBar />
       </div>
       <div className="w-3/5 h-full min-h-96 px-4 flex flex-col gap-4 ">
@@ -16,7 +16,7 @@ function Dashboard() {
         <DiagnosticsList />
       </div>
 
-      <div className="w-1/5 h-[85vh]  flex flex-col gap-4">
+      <div className="w-1/5 h-full  flex flex-col gap-4">
         <PatientInfo />
         <LabResults />
       </div>

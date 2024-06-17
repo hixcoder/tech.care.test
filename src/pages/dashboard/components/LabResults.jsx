@@ -12,7 +12,7 @@ const LabResults = () => {
     );
   }, [selectedUser]);
   return (
-    <main className="w-full rounded-[16px] bg-[#FFFFFF] ">
+    <main className="w-full  h-full rounded-[16px] bg-[#FFFFFF] ">
       <div className="flex flex-col gap-3 px-4 py-8">
         <div>
           <h2 className="capitalize text-[#072635] font-bold  text-[24px]">

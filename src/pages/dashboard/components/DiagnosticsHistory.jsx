@@ -151,7 +151,7 @@ export default function DiagnosticsHistory() {
     initializeData();
   }, [selectedUser]);
   return (
-    <div className="bg-white w-full h-full rounded-[16px] p-6 ">
+    <div className="bg-white w-full h-fit rounded-[16px] p-6 ">
       <h2 className="text-[24px] font-bold ">Diagnosis History</h2>
       <div className="flex flex-col my-8">
         <div className="grid grid-cols-[1fr,200px] gap-5 bg-[#F4F0FE] pb-[2rem] p-3 rounded-[12px]">
@@ -212,6 +212,7 @@ export default function DiagnosticsHistory() {
               </h2>
               <div className="flex items-center justify-start gap-3">
                 <img
+                  className="w-2"
                   src={
                     diastolicAverage >= 100
                       ? "/assets/ArrowUp.svg"
@@ -228,7 +229,7 @@ export default function DiagnosticsHistory() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-6 text-[#072635] py-8">
+        <div className="grid grid-cols-3 gap-6 text-[#072635] py-8 h-fit">
           {cardItems.map((item, index) => (
             <div
               key={"item" + index}
@@ -246,10 +247,18 @@ export default function DiagnosticsHistory() {
               </div>
               <div className="flex flex-row ">
                 {item.status === "Lower than Average" ? (
-                  <img className="px-2" src={"/assets/ArrowDown.svg"} alt="" />
+                  <img
+                    className="px-2 w-8 h-8"
+                    src={"/assets/ArrowDown.svg"}
+                    alt=""
+                  />
                 ) : (
                   item.status === "Higher than Average" && (
-                    <img className="px-2" src={"/assets/ArrowUp.svg"} alt="" />
+                    <img
+                      className="px-2 w-8 h-8"
+                      src={"/assets/ArrowUp.svg"}
+                      alt=""
+                    />
                   )
                 )}
                 <h3>{item.status}</h3>

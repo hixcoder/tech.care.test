@@ -5,7 +5,7 @@ const PatientsBar = () => {
   const { users, selectedUser, setSelectedUser } = useContext(Globalcontext);
   // console.log("users", users);
   return (
-    <main className="w-full  rounded-[16px] bg-[#FFFFFF] pb-[1rem] ">
+    <main className="">
       <div className=" flex flex-col gap-4">
         <div className=" w-full flex items-center justify-between gap-4 px-4 py-6">
           <h2 className="text-[24px] font-bold text-[#072635]">Patients</h2>
